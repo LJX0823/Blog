@@ -1,12 +1,10 @@
 <template>
-    
-
 <div>
 <div id="body">
 
 		<div class="shadow"
 			style="position: absolute;width: 310px; height: 370px; background-color: white;margin-left: 320px;display: flex;">
-			<div style="width: 260px;height: 350px;padding-left: 25px;padding-top: 25px;overflow: hidden;">
+			<div style="width: 286px;height: 350px;padding-left: 25px;padding-top: 25px;overflow: hidden;">
 				<Lbt></Lbt>
 			</div>
 		</div>
@@ -15,13 +13,12 @@
 		<div class="shadow"
 			style="position: absolute;width: 550px; height: 450px; background-color: white;margin-left: 665px;">
 			<div style="width: 500px;height: 350px;padding-left: 25px;padding-top: 15px;">
-				<a class="styC" href="/hotposts">热门文章</a>
+				<router-link to="topic" class="styC">热门文章</router-link>
 				<hr />
 				<img style="width:480px;height:300px;margin-left:10px;" src="static/img/热门文章1.jpeg">
 
-				<p style="font-size: 20px;text-indent:2em;margin-top: -1px;">
-					从委内瑞拉这场内乱爆发至今，俄方一直各个方面给予委莫大的支持和帮助。而美国却在这场内乱背后推波助澜，是这场内乱中反对派的<a
-						style="color: #CD853F;text-decoration: NONE;" href="/hotposts">“查看全文”</a></p>
+				<p style="font-size: 18px;text-indent:2em;margin-top: 0px;">
+					从委内瑞拉这场内乱爆发至今，俄方一直各个方面给予委莫大的支持和帮助。而美国却在这场内乱背后推波助澜，是这场内乱中反对派的...</p>
 			</div>
 		</div>
 
@@ -33,8 +30,8 @@
 		</div>	<br />
 	<div class="shadow"
 		style="position: absolute;width: 310px; height: 430px; background-color: white;margin-left: 320px;margin-top: 375px;">
-		<div style="width: 260px;height: 350px;padding-left: 15px;padding-top: 15px;">
-			<a class="styC" href="/topic">最新话题</a>
+		<div style="width: 300px;height: 350px;padding-left: 15px;">
+			<router-link to="topic" class="styC">最新话题</router-link>
 			<hr />
 			<a class="styC" style="font-size: 18px;" href="/topic">
 				【惊险！公交司机昏迷前紧急拉手刹停车[吃惊]】28日，安徽合肥一辆11路公交车从火车站开往盛大社区，当车行驶到祁门路青年塘站附近时，驾驶员曹跃华！ ​​​​...
@@ -48,7 +45,7 @@
 
 	<div class="shadow"
 		style="position: absolute;width: 550px; height: 350px; background-color: white;margin-left: 665px;margin-top: 455px;">
-		<div style="width: 500px;height: 280px;padding-left: 25px;padding-top: 15px; font-size: 18px;">
+		<div style="width: 500px;height: 280px;padding-left: 25px;padding-top: 50px; font-size: 18px;">
 			<a class="styC" href="/picblog">热门视频</a>
 			<hr />
 			<a class="styC" style="font-size: 20px;" href="/picblog">
@@ -56,8 +53,6 @@
 			<span style="width:150px;float: left;padding-left: 20px;padding-top: 50px;"><a class="styC"
 					href="/topic">#彩妆#</a><a class="styC" href="/picblog">这世道连彩妆都要靠性感噱头搏出位了!!!</a></span>
 		</div>
-		<a style="color:darkorange;text-decoration: none;font-size:20px;margin-left: 150px;margin-top: 200px;"
-			href="#">更多精彩内容，点击查看</a>
 	</div>
 
 
@@ -165,8 +160,8 @@ export default {
   background: #eeff99;
 }
 
-body {
-  background-color: #f2f2f2;
+.body {
+  background-color:#adadad;
 }
 
 #right li {

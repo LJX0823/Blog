@@ -7,19 +7,20 @@
 	 <br><br>
     <div>
       <div id="body">
-			<div class="shadow" style="position: absolute;width: 900px; height: 830px; background-color:#ACC5D5;margin-left: 320px;">
-				<div id="result" style="width: 850px;height: 800px;margin-left: 25px;margin-top: -5px;background-color: white;font-size: 22px;">
+			<div class="shadow" style="position: absolute;width: 900px; height: 850px; background-color:#ACC5D5;margin-left: 320px;">
+				<div id="result" style="width: 850px;height: 800px;margin-left: 25px;margin-top:20px;background-color: white;font-size: 22px;">
 					<p style="padding-left: 30px;padding-top: 30px;">为您搜索到的文章有：</p>
 					<div style="width:800px;height:750px;margin-left:30px;">
-					<p >1.【谢谢这个少年，新的旅程我们继续同行！李易峰与公司合约到期】#李易峰合约到期#30日，李易峰
-						晒出一张自拍，配文称“谢谢这个少年”。随后李易峰工作室转发微博称“谢谢”，疑似宣布李易峰与原经纪公司合约到期后将不续约。​ <a href="#">展开全文</a></p>
-					<p>2.李易峰晒出一张自拍，并配文：“谢谢，这个少年”。疑似宣布与原经纪公司合约到期后将不续约。李易峰很有契约精神地走到了现在，靠自己取得电视剧和电影领域的优秀成绩就是对前公司最好的回报，感谢前公司知遇之恩，谢谢这个少年，祝李易峰星途更加灿烂@李易峰
-						​</p>
-					<p>3.#李易峰疑与公司合约到期# 2014年4月1日到2019年3月30日，这些年@李易峰
-						一直秉持良好的契约精神走到今天合约正常结束，感谢知遇之恩，好聚好散。期待李演员接下来的作品《隐秘而伟大》《我在北京等你》，更广阔的事业征程，新征程，一切已蓄势待发[心]</p>
-					<p>4.#李易峰疑与公司合约到期#我家的什么时候到期啊[拜拜] </p>
-					<p>5.#李易峰疑与公司合约到期#是合约到期 不是解约 祝李易峰星途更加灿烂[心]@李易峰 #李易峰# ​</p>
-					<p>6.#李易峰疑与公司合约到期#李易峰称自己为少年[疑问]还谢自己[笑cry] ​</p>
+					          <div  v-for="(blog,index) in Blogs " :key="index"  class="single-blog">
+                                   <h2 style="color:rgb(24, 30, 114);margin-left:10px;">{{blog.tittle}}</h2>
+                                   <h4 class="author">博主:{{blog.author}}</h4>
+                                   <p class="content">
+                                       {{blog.content}}
+                                    </p>
+                                   <h4 class="date">{{blog.date}}</h4>
+                                   
+                                    
+                              </div>
 					</div>
 				</div>
 			</div>
@@ -96,7 +97,20 @@ export default {
   components:{
     Nav,
     Bottom
-  }
+  },
+  data:function(){
+	  return{
+        Blogs:[],
+	  }
+  },
+    mounted(){
+      let data={
+          search:sessionStorage.getItem('search')
+      }
+    this.$axios.post('/api/blog/Lookup',data).then(res=>{
+           this.Blogs=res.data;
+       })
+  },
 
 };
 </script>
@@ -192,5 +206,28 @@ a:hover {
 .app img {
   width: 260px;
   height: 320px;
+}
+.single-blog{
+  padding:5px;
+  border:2px solid black;
+  background-color:rgb(231, 244, 248);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.author{
+  position:relative;
+  left: 650px;
+  top:-45px;
+}
+.content{
+  text-indent: 2em;
+  font-size: 16px;
+  margin-left: 20px;
+  margin-top: -37px;
+}
+.date{
+  color:#666;
+  margin-left: 600px;
+  font-size: 16px;
 }
 </style>

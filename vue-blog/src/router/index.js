@@ -8,7 +8,7 @@ import Pic from '@/components/Pic'
 import Home from '@/components/Home'
 import Register from '@/components/Register'
 import topic  from '@/components/topic'
-import contain1 from '@/components/contain1'
+import contain from '@/components/contain'
 import showblog from '@/components/showblog'
 import store from '../store'
 
@@ -76,9 +76,9 @@ const router= new Router({
       component: topic
     },
     {
-      path: '/contain1',
-      name: 'contain1',
-      component: contain1
+      path: '/contain',
+      name: 'contain',
+      component: contain
     },
     {
       path: '/showblog',
@@ -94,13 +94,13 @@ router.beforeEach((to, from, next) => {
   // from: Route: 当前导航正要离开的路由
   // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
 
-  const nextRoute = ['Home'];
+  const nextRoute = ['Home','Showblog'];
   //let isLogin =  store.state.isLogin// 是否登录
  let isLogin = window.sessionStorage.isLogin;
   // 未登录状态；当路由到nextRoute指定页时，跳转至login
   if (nextRoute.indexOf(to.name) >= 0) {  
     if (!isLogin) {
-      console.log('what fuck');
+      
       router.push({ name: 'Login' })
     }
   }

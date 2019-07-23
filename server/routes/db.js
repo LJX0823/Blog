@@ -18,11 +18,12 @@ var AiticelSchema=mongoose.Schema({
   tittle:String,
   content:String,
   author:String,
+  date:String
 })
 //2.Model 通过Schema构造而成，除了具有Schema定义的数据库骨架以外，还可以具体的操作数据库。
 //这里表示在zhao数据库中创建了一个users的表，并且格式为loginSchema中所定义的
 var Models = {
     Login : mongoose.model('users',loginSchema),
-    Home : mongoose.model('Articles',AiticelSchema)
+    Home : mongoose.model('articles',AiticelSchema)
 }
 module.exports = Models;

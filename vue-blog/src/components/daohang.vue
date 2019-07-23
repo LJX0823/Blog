@@ -1,11 +1,9 @@
-    <template>   
-   <div id="daohang">
-  <div class="ui buttons">
-
+<template>   
+<div id="daohang">
+<div class="ui buttons">
   <router-link  :to="{name:'hotposts'}">
   <button class="ui button">热门</button>
   </router-link>
- 
   <div class="or"></div>
   <router-link  :to="{name:'moon'}">
   <button class="ui positive button">最新</button>

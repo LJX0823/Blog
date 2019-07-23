@@ -3,35 +3,39 @@
     id="app1"
     style="background-color:#273D4B;width: 1920px;height: 120px;margin-left: -8px"
   >
-    <div style=" position:absolute;left:1800px" v-if="username">
+    <div style=" position:relative;left:1300px;color:white;" v-if="username">
       <router-link to="Home"> <img src="static/img/touxiang.png" class="tou"></router-link>
+      <span style="position:relative;top:3px;">{{username}}</span>
     </div>
-    <div style="padding-left: 1250px;padding-top: 8px;" v-else>
+    <div style="padding-left: 1250px;padding-top: 30px;" v-else>
       <router-link to="/Register" class="styA">注册</router-link>
       <a class="styA">|</a>
       <router-link to="Login" class="styA">登陆</router-link>
     </div>
-    <h1 style="color: white;font-size: 35px; margin: 0px; padding:0px 0px 0px 500px">青鸟博客</h1>
+    <h1 style="color: white;font-size: 40px; margin: 0px; padding:0px 0px 0px 500px">青鸟博客</h1>
     <div style="margin: -30px 0px 0px 700px;">
       <router-link to="/" class="styA">首页</router-link>
       <router-link to="topic" class="styA">热门话题</router-link>
       <router-link to="Picblog" class="styA">图片博客</router-link>
     </div>
-    <div style="margin-top: -25px;margin-left: 1250px;">
+    <div class="s1" style="margin-top: -25px;margin-left: 1250px;background-image:url(static/img/放大镜.png); background-repeat: no-repeat; width: 180px;height:28px; 
+						        background-color:#182630;
+						        color:white;
+						        
+						        border-radius: 50px;">
       <input
         type="text"
         name="search"
-        placeholder="          搜索用户,文章"
-        style="background-image:url(static/img/放大镜.png);
-						        background-repeat: no-repeat;
-						        width: 230px;
-						        height: 24px; 
+        placeholder="  搜索用户,文章"
+        style="     margin-left:25px;
+                    color:white;
+						        width: 180px;
+						        height: 28px; 
 						        background-color:#182630;
-						        color: white;
 						        border: solid 1px #182630;
 						        border-radius: 50px;"
-      >
-      <router-link to="Lookup" class="styA" style="margin-left:-90px;" >搜索</router-link>
+      v-model="search" >
+      <a class="styA" style="position:relative;top:-26px;left:110px;font-size:16px;"  @click="lookup">搜索</a>
     </div>
   </div>
 </template>
@@ -40,11 +44,19 @@ export default {
   name: "Nav",
   data: function() {
     return {
-      username: false
+      username: false,
+      search:'',
     };
   },
   mounted: function() {
     this.username = sessionStorage.getItem("username");
+  },
+  methods:{
+    lookup(){
+      console.log(this.search)
+       sessionStorage.setItem("search",this.search);
+      this.$router.push({name:"Lookup"});
+    }
   }
   // computed:{
   //   isLogin(){
@@ -64,7 +76,8 @@ export default {
   color: #adadad;
   text-decoration: none;
   padding-left: 35px;
-  font-size: 20px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .styB {
@@ -87,11 +100,16 @@ export default {
   box-shadow: #cdcdb4 0px 0px 10px;
   background: #eeff99;
 }
-
+img{
+  width:50px;
+  height: 50px;
+}
 body {
   background-color: #f2f2f2;
 }
-
+.s1:hover{
+  color: white;
+}
 #right li {
   list-style: none;
   display: inline-block;

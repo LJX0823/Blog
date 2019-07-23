@@ -6,7 +6,7 @@
         </div>
      <div class="right">
       <div class="Rcontent">
-         <p style="font-size:29px;margin-top:12px;color: black;">账号登录</p><hr>
+         <p class="title1">账号登录</p><hr>
     
          <form method="post" onsubmit="return false"> 
         
@@ -16,19 +16,15 @@
         <center id="lip">{{message}}</center>
 
         </form>
-
-        <!-- <input id="RC3" type="checkbox" value="checkbox">
-         <p style=" margin:-100px 210px ;margin-left: -80px">记住密码</p>
-         <p style=" margin:80px -230px ;margin-left: 90px">忘记密码</p>
-         <br> -->
-        <router-link to="/Register"><a href="/register" style="text-decoration:none;color:rgb(131, 129, 129)"><p style="margin-top: 0px;margin-left: -250px">没有账号?点击注册</p></a></router-link>
+        <router-link to="/Register" class="rl1">没有账号?点击注册</router-link>
       </div>   
      </div>
 
-     <div id="u2" class="ax_default button legacyPulsateBorder" style="cursor: pointer;">
-        <div id="u2_div" class="" tabindex="0"></div>
-        <div id="u2_text" class="text " style="top: 7px; transform-origin: 68px 13px;">
-         <router-link to="/"><a  style="text-decoration:none;color:#fff;"><p><span>返回首页</span></p></a></router-link>
+     <div id="backbtn">
+        <div id="btn_div">
+        <div id="btn_text">
+         <router-link to="/" class="rl2" >返回首页</router-link>
+         </div>
         </div>
       </div>
     
@@ -94,7 +90,7 @@ export default {
     }
     .right{
         width: 550px;
-        height: 550px;
+        height: 520px;
         position: absolute;  
         left: 36%;
         top: 230px;
@@ -113,12 +109,35 @@ export default {
         left: 42px;
         top: 36px;
         width: 460px;
-        height: 464px;
+        height: 430px;
         text-align: center;
         line-height: normal;
         background-color: white;
         font-size: 16px;
         color: rgb(153, 153, 153);
+    }
+    .title1{
+        font-size:29px;
+        margin-top:12px;
+        color: black;
+       
+        text-align: center;
+    }
+    .rl1{
+        text-decoration:none;
+        color:rgb(131, 129, 129);
+        margin-left: -265px;
+
+    }
+    .rl1:hover{
+        color:darkorange;
+    }
+    .rl2{
+        text-decoration:none;
+        color:#fff;
+        position: relative;
+        top: -1px;
+        left: 28px;
     }
     #RC1{
         font-size: 20px;
@@ -157,7 +176,8 @@ export default {
         top:340px;
         left:30px;
     }
-    #u2_text {
+    #btn_text {
+    top: 7px; transform-origin: 68px 13px;
     border-width: 0px;
     position: absolute;
     left: 2px;
@@ -165,25 +185,23 @@ export default {
     width: 136px;
     word-wrap: break-word;
     }
-    #u2:hover{
+    #backbtn:hover{
         background-color: rgba(39, 61, 75, 1);
         border-radius: 5px;
     }
-    #u2 {
+    #backbtn{
+    cursor: pointer;
     border-width: 0px;
     position: absolute;
-    left: 1725px;
-    top: 43px;
+    left: 1625px;
+    top: 80px;
     width: 140px;
     height: 40px;
     font-size: 20px;
     color: #C9C9C9;
     }
-    #u2_div{
+    #btn_div{
     border-width: 0px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
     width: 140px;
     height: 40px;
     background: inherit;
@@ -196,21 +214,11 @@ export default {
     font-size: 20px;
     color: #C9C9C9;
     }
-   #u2 p{
-    text-align: center;
-    margin: 0px;
-    text-rendering: optimizeLegibility;
-    font-feature-settings: "kern" 1;
-    -webkit-font-feature-settings: "kern";
-    -moz-font-feature-settings: "kern";
-    -moz-font-feature-settings: "kern=1";
-    font-kerning: normal;
-
-    }
     a:hover{
-			color: #CD853F;
+			color: darkorange;
 		}
     #sum{
+        outline: none;
         cursor: pointer;
         width:400px;
         height:50px;
@@ -220,7 +228,8 @@ export default {
         border: 2px solid;
         border-radius:10px;
         z-index: 99;
-        margin-top: 250px;}
+        margin-top: 220px;
+        margin-left: -7px}
     #sum:hover{
         background-color:white;
         color: rgba(39, 61, 75, 1);
@@ -240,16 +249,16 @@ export default {
     .title{
         position: relative;
         left: 10px;
-        top:30px;
+        top:70px;
         text-align: center;
         color: #fff;
     } 
-    p:hover{
+    span:hover{
 			color:darkorange;
         }
     #lip{
         position: absolute;
-        top:57%;
+        top:62%;
         left:6%;
         font-size: 18px;
         color: red;

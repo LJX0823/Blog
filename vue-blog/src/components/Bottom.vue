@@ -4,7 +4,7 @@
 
 <div
       class="shadow"
-      style="width: 1240px; height: 200px; background-color: white;position:absolute;top:1320px;left:327px;margin-bottom:50px;border: 1px solid #DBDBDB;"
+      style="width: 1245px; height: 200px; background-color: white;position:absolute;top:1320px;left:318px;margin-bottom:50px;border: 1px solid #DBDBDB;"
       id="bottom"
     >
       <div style="padding-top: 50px;padding-left: 20px;position: relative;">

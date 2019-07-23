@@ -1,23 +1,8 @@
 <template>
   <div class="bg" style=" background-image:url(static/img/注册bg.jpg);">
-    <div id="u2" class="ax_default button legacyPulsateBorder" style="cursor: pointer;">
-      <div id="u2_div" class tabindex="0"></div>
-      <div id="u2_text" class="text" style="top: 7px; transform-origin: 68px 13px;">
-        <router-link to="/">
-          <a href="/" style="text-decoration:none;color:white">
-            <p>
-              <span>返回首页</span>
-            </p>
-          </a>
-        </router-link>
-      </div>
-    </div>
     <div id="content">
-      <div id="from">
-        <div style="position:relative;top:10px;">
-          <p style="font-size:29px;margin-top:20px;color: black">注册账号</p>
-        </div>
-        <hr>
+      <div id="form">
+        <p class="title1">注册账号</p><hr>
         <form method="post" onsubmit="return false">
           <center id="lip">{{message}}</center>用&nbsp户&nbsp名&nbsp&nbsp:
           <input id="username" type="text" name="user" value placeholder="请输入3位以上用户名" v-model="username"
@@ -31,10 +16,17 @@
           <input id="sum" type="submit" value="注册" @click="resgister">
         </form>
 
-        <router-link to="/Login" style="text-decoration:none;font-size: 16px;margin-left:-250px;">已有账号？点击登录
+        <router-link to="/Login" class="rl1">已有账号？点击登录
         </router-link>
       </div>
     </div>
+    <div id="backbtn">
+        <div id="btn_div">
+        <div id="btn_text">
+         <router-link to="/" class="rl2" >返回首页</router-link>
+         </div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -83,6 +75,11 @@
 
 
 <style scoped>
+  .title1{
+        font-size:29px;
+        color: black;
+        padding-top: 20px;
+    }
   .bg {
     background-repeat: no-repeat;
     background-size: 100%;
@@ -95,7 +92,9 @@
     background-repeat: no-repeat;
     background-size: 100%;
   }
-
+  input{
+    margin-top:20px;
+  }
   #Rbutton {
     position: absolute;
     width: 397px;
@@ -104,72 +103,78 @@
     top: 340px;
     left: 30px;
   }
+  .rl1{
+    font-size: 16px;
+        text-decoration:none;
+        color:rgb(131, 129, 129);
+        margin-left: -255px;
+  }
+  .rl1:hover{
+        color:darkorange;
+    }
+ .rl2{
+        text-decoration:none;
+        color:#fff;
+        position: relative;
+        top: -1px;
+        left: 28px;
+    }
 
-  #u2_text {
+  #btn_text {
+    top: 7px; transform-origin: 68px 13px;
     border-width: 0px;
     position: absolute;
     left: 2px;
     top: 8px;
     width: 136px;
     word-wrap: break-word;
-  }
-
-  #u2:hover {
-    background-color: rgba(39, 61, 75, 1);
-    border-radius: 5px;
-  }
-
-  #u2 {
+    }
+    #backbtn:hover{
+        background-color: rgba(39, 61, 75, 1);
+        border-radius: 5px;
+    }
+    #backbtn{
+    cursor: pointer;
     border-width: 0px;
     position: absolute;
-    left: 1733px;
-    top: 51px;
+    left: 1625px;
+    top: 80px;
     width: 140px;
     height: 40px;
     font-size: 20px;
-    color: #c9c9c9;
-  }
-
-  #u2_div {
+    color: #C9C9C9;
+    }
+    #btn_div{
     border-width: 0px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
     width: 140px;
     height: 40px;
     background: inherit;
     background-color: rgba(39, 61, 75, 0.514);
     box-sizing: border-box;
     border-radius: 5px;
-
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     font-size: 20px;
-    color: #c9c9c9;
-  }
-
-  #u2 p {
-    text-align: center;
-    margin: 0px;
-    text-rendering: optimizeLegibility;
-    font-feature-settings: "kern"1;
-    -webkit-font-feature-settings: "kern";
-    -moz-font-feature-settings: "kern";
-    -moz-font-feature-settings: "kern=1";
-    font-kerning: normal;
-  }
-
+    color: #C9C9C9;
+    }
   #img {
     position: absolute;
     left: 208px;
     top: 250px;
   }
-
-  #from {
+  #content {
+    background-color: rgba(45, 48, 48, 0.5);
+    width: 550px;
+    height: 520px;
+    position: absolute;
+    left: 36%;
+    top: 230px;
+  }
+  #form {
     background-color: white;
     width: 460px;
-    height: 620px;
+    height: 430px;
     margin-left: 42px;
     margin-top: 40px;
     border-radius: 5px;
@@ -205,7 +210,7 @@
   }
 
   #sum {
-    margin-top: 10px;
+    margin-top: 50px;
     cursor: pointer;
     width: 400px;
     height: 50px;
@@ -214,6 +219,7 @@
     color: white;
     border: 2px solid;
     border-radius: 10px;
+    outline: none;
   }
 
   #sum:hover {
@@ -230,20 +236,14 @@
     color: darkorange;
   }
 
-  #content {
-    background-color: rgba(45, 48, 48, 0.425);
-    width: 550px;
-    height: 700px;
-    position: absolute;
-    left: 36.4%;
-    top: 100px;
-  }
+  
 
   #lip {
     position: absolute;
-    top: 73%;
-    left: 13%;
+    top: 62%;
+    left: 14%;
     font-size: 18px;
+    color: red;
   }
 
   .changecolor {

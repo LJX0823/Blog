@@ -102,7 +102,7 @@
 				</div>
 		<br />
 		<br/>
-		<bottom></bottom>
+	<bottom></bottom>
 </div>
 </template>
 

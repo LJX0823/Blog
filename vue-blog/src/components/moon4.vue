@@ -30,12 +30,12 @@ div{
 img{
   margin-left: 10px;
   margin-top:5px;
-  width: 120px;
+  width: 148px;
   height: 120px;
 }
 h4{
   margin-top:5px;
-  margin-left: 0px;
+  margin-left: 10px;
   font-size: 20px;
 }
 </style>
